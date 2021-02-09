@@ -1,6 +1,15 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  color: aliceblue;
 }
+
+html{
+  background-color: #282c34;
+  margin-bottom: 100px;
+}
+
+
 
 .App-logo {
   height: 40vmin;
