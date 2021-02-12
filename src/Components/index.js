@@ -7,8 +7,6 @@ import Footer from "./footer";
 import getQuestions from "./useApi";
 import Content from "./DisplayContent";
 import ShowResult from "./Result";
-import Category from './const'
-
 
 class Quiz extends React.Component {
 
@@ -46,7 +44,9 @@ class Quiz extends React.Component {
     stopQuiz = () => {
         this.setState({
             category : {},
-            question : {}
+            question : {},
+            username : '',
+            marks:0
         });
     }
 
@@ -86,19 +86,8 @@ class Quiz extends React.Component {
                             marks = {this.state.marks} 
                             user = {this.state.username} />)}
                     />
-                    {/* <Dashboard onSubmit = {this.setDeatil} />
-
-                    <Content 
-                        question = {this.state.question} 
-                        onQuizSubmit = {this.onQuizend}
-                        onQuizStop = {this.stopQuiz}
-                    />
-
-                    <ShowResult 
-                        marks = {this.state.marks} 
-                        user = {this.state.username}
-                    /> */}
                 </Switch>
+
 
                 <Footer />
             </>

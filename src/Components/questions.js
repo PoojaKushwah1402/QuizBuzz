@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 import './display.css';
 import shuffle from "./shuffle";
+import Loading from "./Loading";
+
 
 class Questions extends React.PureComponent {
 
@@ -150,6 +152,8 @@ class Questions extends React.PureComponent {
 
         if( this.state.question) {
             options = this.state.options.map( (option, index) => <div className='option' id={index} > {option.value} </div> )
+        }else {
+            options = <Loading />
         }
 
 

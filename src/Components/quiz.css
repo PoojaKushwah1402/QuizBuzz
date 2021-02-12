@@ -24,7 +24,7 @@
 
 .wel-msg{
     text-align: left;
-    width: 50%;
+    width: 100%;
     padding: 1%;
     margin-left: 2%;
     font-size: 50px;
@@ -35,7 +35,7 @@
 
 .detl-msg{
     padding: 1%;
-    margin-top: 2%;
+    margin-top: 3%;
     color: rgb(201, 247, 231);
     font-family: fantasy;
     font-weight: bolder;
@@ -46,20 +46,22 @@
     padding: 2%;
     margin-top: 4%;
     color: rgb(232, 250, 244);
-    font-family: monospace;
 
 
 }
 
 .user-name{
-    font-size: 25px;
+    font-size: xx-large;
     margin-right: 2%;
 }
 
 #username{
     width: 30%;
-    padding: .5%;
+    padding: 1%;
     border-radius: 9px;
+    font-size: x-large;
+    padding-left: 3%;
+
 
 }
 
@@ -75,15 +77,16 @@
     flex: 1;
     position: relative;
     left: 1%;
+
 }
 
 .categry{
     display: inline-block;
     margin: 1%;
     flex: 1;
-    font-size: 20px;
+    font-size: xx-large;
     position: relative;
-    right: 20%;
+    right: 5%;
 }
 
 .btn-manul{
@@ -111,7 +114,16 @@
     color: rgb(198, 248, 248);
 }
 
+.Loading{
+    width: 90%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 5%;
+    font-size: xxx-large;
+    font-family: cursive;
+    color: aquamarine;
 
+}
 
 
 
