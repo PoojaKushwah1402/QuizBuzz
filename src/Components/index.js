@@ -77,7 +77,8 @@ class Quiz extends React.Component {
                             <Content {...props} 
                             question = {this.state.question} 
                             onQuizSubmit = {this.onQuizend}
-                            onQuizStop = {this.stopQuiz} />)}
+                            onQuizStop = {this.stopQuiz} 
+                            category = {this.state.category.category}/>)}
                     />
 
                     <Route exact path ='/quizresult'                         

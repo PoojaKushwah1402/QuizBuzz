@@ -55,7 +55,8 @@ class Content extends React.Component {
         return(
             <div className='question-div'>
                 <div className='content-head' >
-                   <div className='count' >{this.state.questCount + 1}/10</div>
+                    <div> Category : {this.props.category} </div>
+                   <div className='count' >{this.state.questCount + 1}/10  </div>
                    <Link to='/' >
                          <Button 
                             variant="danger"
