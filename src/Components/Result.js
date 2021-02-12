@@ -18,7 +18,11 @@ const ShowResult = props => {
             <h1 className='greet' > {status +' '+ user}!!!! </h1>
             <h2 className='show-results' > You have earned {props.marks} Points...</h2>
             <Link to='/' >
-                  <Button variant="outline-light">New Quiz</Button>
+                  <Button 
+                    variant="outline-light"
+                    onClick = {()=>props.newQuiz()}    >
+                    New Quiz
+                    </Button>
             </Link>
         </div>
     )

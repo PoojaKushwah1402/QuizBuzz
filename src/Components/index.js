@@ -60,6 +60,7 @@ class Quiz extends React.Component {
     }
 
 
+
     render() {
         return(
             <>
@@ -85,7 +86,8 @@ class Quiz extends React.Component {
                         render={(props) => (
                             <ShowResult {...props} 
                             marks = {this.state.marks} 
-                            user = {this.state.username} />)}
+                            user = {this.state.username} 
+                            newQuiz = {this.stopQuiz}/>)}
                     />
                 </Switch>
 
