@@ -61,8 +61,6 @@
     border-radius: 9px;
     font-size: x-large;
     padding-left: 3%;
-
-
 }
 
 .container{
@@ -86,7 +84,7 @@
     flex: 1;
     font-size: xx-large;
     position: relative;
-    right: 5%;
+    right: 20%;
 }
 
 .btn-manul{
@@ -139,3 +137,39 @@
     left: 0;
 
 }
+
+@media only screen and (max-width: 600px) {
+   
+    #username{
+        width: 60%;
+        padding: .2%;
+        border-radius: 9px;
+        font-size: x-large;
+        padding-left: 3%;
+    }
+
+    .container{
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        margin-top: 3%;
+        justify-content: center;
+    }
+
+    .categry{
+        display: inline-block;
+        margin: 1%;
+        flex: 1;
+        font-size: xx-large;
+        position: relative;
+        right: 0%;
+    }
+
+    .select-btn{
+        margin: 1%;
+        flex: 1;
+        position: relative;
+        left: 0%;
+    
+    }
+  }
