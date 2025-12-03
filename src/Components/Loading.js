@@ -1,16 +1,14 @@
 import React from "react";
 
-import  "./quiz.css";
+import "./quiz.css";
 
-
-const Loading = props => {
-
-    return(
+const Loading = () => {
+    return (
         <div className='Loading'>
-            Please Wait While We are Fetching The Data
+            <div className='loading-spinner'></div>
+            <p className='loading-text'>Loading your questions...</p>
         </div>
     )
-
 }
 
 export default Loading;

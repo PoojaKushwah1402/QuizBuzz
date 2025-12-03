@@ -1,61 +1,81 @@
-import React from "react";
-import { Dropdown, DropdownButton, Button } from 'react-bootstrap';
-import { useState } from "react";
+import React, { useState } from "react";
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
-import  "./quiz.css";
+import "./quiz.css";
 import Category from './const'
 
 const DropItems = category => {
-    let items = category.map((catgry)=> <Dropdown.Item key ={catgry.id} eventKey={JSON.stringify(catgry)} >{catgry.category}</Dropdown.Item>);
-    return items;
+    return category.map((catgry) => (
+        <Dropdown.Item 
+            key={catgry.id} 
+            eventKey={JSON.stringify(catgry)}
+        >
+            {catgry.category}
+        </Dropdown.Item>
+    ));
 }
 
-
-
 const Dashboard = props => {
+    const [category, setCategory] = useState('');
+    const [name, setName] = useState('');
+    const items = DropItems(Category);
 
-    let [category, setCategory] = useState('');
-    let [name, setName] = useState('');
-    let items = DropItems(Category);
+    return (
+        <div className='dashboard-container'>
+            <h1 className='wel-msg'>
+                Test Your Knowledge with <span className='highlight'>QuizBuzz</span>
+            </h1>
+            <p className='detl-msg'>
+                Challenge yourself with trivia questions across various categories. 
+                Enter your name and pick a category to begin!
+            </p>
+            
+            <div className='form'>
+                <div className='form-group'>
+                    <label htmlFor='username' className='user-name'>
+                        Your Name
+                    </label>
+                    <input 
+                        id='username' 
+                        placeholder='Enter your name...' 
+                        onChange={(e) => setName(e.target.value)}
+                        autoComplete="off"
+                    />
+                </div>
 
+                <div className='container'>
+                    <label className='category-label'>Select Category</label>
+                    
+                    <DropdownButton 
+                        id="dropdown-menu-align-right"
+                        className='select-btn'
+                        onSelect={(e) => setCategory(JSON.parse(e))} 
+                        title={category !== '' ? category.category : 'Choose a category...'}
+                    >
+                        {items}
+                    </DropdownButton>
 
-    return(
-        <>
-            <h1 className='wel-msg' > Welcome to QuizzBuzz....!! </h1>
-            <h2 className='detl-msg' > Please fill below Details for the Quiz Game.. </h2>
-            <div className='form' >
-                <label htmlFor='username' className='user-name' >Enter your Name :</label>
-                <input id='username' placeholder='Enter Name....' onChange={(e)=> setName(e.target.value)} />
+                    {category !== '' && (
+                        <div className='categry'>
+                            <span>📌</span>
+                            <b>Selected:</b> {category.category}
+                        </div>
+                    )}
+                </div>
 
-            <div className='container'>
-
-                <DropdownButton id="dropdown-menu-align-right"
-                    className='select-btn'
-                    onSelect={(e) => setCategory(JSON.parse(e)) } 
-                    title="Category">
-                    {items}
-                </DropdownButton>
-
-                <div className='categry' > <b>Select Category : </b>{category !== '' ? category.category : 'Select'} </div>
-
-            </div>
-
-
-
-                <Link to='/quizstart' >
-                    <Button disabled={!(category && name)} 
-                            className='btn-manul' 
-                            variant="outline-success"
-                            onClick = {()=> props.onSubmit(category, name) } > Submit</Button>
+                <Link to='/quizstart'>
+                    <button 
+                        disabled={!(category && name)} 
+                        className='btn-manul'
+                        onClick={() => props.onSubmit(category, name)}
+                    >
+                        🚀 Start Quiz
+                    </button>
                 </Link>
-
-               
- 
             </div>
-        </>
+        </div>
     )
-
 }
 
 export default Dashboard;

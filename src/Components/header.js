@@ -1,18 +1,23 @@
 import React from 'react';
 import WbIncandescentTwoToneIcon from '@material-ui/icons/WbIncandescentTwoTone';
+import { Link } from 'react-router-dom';
 
-import  "./quiz.css";
+import "./quiz.css";
 
 const Header = props => {
-
-    return(
-        <div className='quiz-header' >
+    return (
+        <header className='quiz-header'>
+            <Link to='/' className='header-logo'>
                 <WbIncandescentTwoToneIcon />
-                <div className='heading'> QuiZ buZz </div>
-                <div className='user' > Hey {props.name} ! </div>
-        </div>
+                <div className='heading'>QuizBuzz</div>
+            </Link>
+            {props.name && (
+                <div className='user'>
+                    Hey {props.name}!
+                </div>
+            )}
+        </header>
     )
-
 }
 
 export default Header;
